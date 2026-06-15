@@ -1,6 +1,6 @@
 # 🚇 Riyadh Metro Data Pipeline
 
-An end-to-end data engineering pipeline that ingests real-time Riyadh Metro data via API, orchestrates processing with Apache Airflow, stores and transforms it in Google Cloud, and visualizes insights through a Looker Studio dashboard.
+An end-to-end data engineering pipeline that ingests Riyadh Metro data via API, orchestrates processing with Apache Airflow, stores and transforms it in Google Cloud, and visualizes insights through a Looker Studio dashboard.
 
 ---
 
@@ -44,10 +44,6 @@ Riyadh Metro API
 riyadh-metro-pipeline/
 ├── dags/
 │   └── metro_pipeline_dag.py       # Main Airflow DAG definition
-├── transformations/
-│   └── transform_metro_data.sql    # BigQuery transformation queries
-├── config/
-│   └── gcp_config.py               # GCP project and dataset configs
 ├── dashboard/
 │   └── looker_studio_link.md       # Link to the published dashboard
 └── README.md
@@ -129,23 +125,6 @@ airflow dags trigger metro_pipeline_dag
 The Looker Studio dashboard visualizes key Riyadh Metro metrics including ridership trends, station activity, and service patterns.
 
 > 🔗 **[View Dashboard](#)** ← *(replace with your Looker Studio link)*
-
----
-
-## 🗺️ BigQuery Schema
-
-### Raw Table: `riyadh_metro.raw_metro_data`
-
-| Column | Type | Description |
-|---|---|---|
-| `ingestion_timestamp` | TIMESTAMP | When the record was fetched |
-| `...` | `...` | *(add your raw fields here)* |
-
-### Transformed Table: `riyadh_metro.transformed_metro_data`
-
-| Column | Type | Description |
-|---|---|---|
-| `...` | `...` | *(add your transformed fields here)* |
 
 ---
 
